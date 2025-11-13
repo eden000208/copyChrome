@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "name": "copyChrome (migrated)",
+  "version": "1.0.0",
+  "description": "Migrated Manifest V3 scaffold for copyChrome. Adapt files into project root as needed.",
+  "action": {
+    "default_title": "copyChrome"
+  },
+  "background": {
+    "service_worker": "sw.js",
+    "type": "module"
+  },
+  "permissions": [
+    "storage",
+    "scripting",
+    "activeTab",
+    "clipboardWrite"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "browser-polyfill-lite.js"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  }
+}
